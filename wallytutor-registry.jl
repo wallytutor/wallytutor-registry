@@ -4,10 +4,10 @@ Pkg.add("LocalRegistry")
 
 using LocalRegistry
 
-name = "WallyTutor"
+name = "wallytutor-registry"
 rurl = "https://github.com/wallytutor/wallytutor-registry"
 
 create_registry(name, rurl, description = "WallyTutor packages")
 
-package = "../DryTooling.jl"
+package = "D:/DryTooling.jl"
 register(package; registry = name)
