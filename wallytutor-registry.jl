@@ -9,5 +9,8 @@ rurl = "https://github.com/wallytutor/wallytutor-registry"
 
 create_registry(name, rurl, description = "WallyTutor packages")
 
-package = "D:/DryTooling.jl"
-register(package; registry = name)
+packages = [
+    "D:/DryTooling.jl",
+    "D:/RadCalNet.jl"
+]
+register.(packages; registry = name)
