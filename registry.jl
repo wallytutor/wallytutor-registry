@@ -4,16 +4,17 @@ Pkg.add("LocalRegistry")
 
 using LocalRegistry
 
-name = "wallytutor-registry"
-rurl = "https://github.com/wallytutor/wallytutor-registry"
+const repo = "D:/Repositories"
+const name = "wallytutor-registry"
+const rurl = "https://github.com/wallytutor/wallytutor-registry"
 
-create_registry(name, rurl, description = "WallyTutor packages")
-
-root = "D:/Repositories"
+if !isfile("Registry.toml")
+    create_registry(name, rurl, description = "WallyTutor packages")
+end
 
 packages = [
-    "$(root)/DryTooling.jl",
-    "$(root)/RadCalNet.jl"
+    "$(repo)/DryTooling.jl",
+    "$(repo)/RadCalNet.jl"
 ]
 
 register.(packages; registry = name)
