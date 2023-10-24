@@ -4,3 +4,4 @@ repo = "https://github.com/wallytutor/wallytutor-registry"
 description = "WallyTutor packages"
 
 [packages]
+0dff88b2-42f1-4682-ada6-3beed8c0a17c = { name = "DryTooling", path = "D/DryTooling" }
