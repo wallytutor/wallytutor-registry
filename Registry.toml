@@ -1,8 +1,6 @@
 name = "wallytutor-registry"
-uuid = "f7cb347e-d462-497b-a2ee-4842d7b4f5c8"
+uuid = "c5aa83a1-c802-4470-a1b3-0d71079b903b"
 repo = "https://github.com/wallytutor/wallytutor-registry"
 description = "WallyTutor packages"
 
 [packages]
-0dff88b2-42f1-4682-ada6-3beed8c0a17c = { name = "DryTooling", path = "D/DryTooling" }
-573d4978-4615-42ee-907a-4f7d0c4f09b5 = { name = "RadCalNet", path = "R/RadCalNet" }
