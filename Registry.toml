@@ -4,3 +4,4 @@ repo = "https://github.com/wallytutor/wallytutor-registry"
 description = "WallyTutor packages"
 
 [packages]
+573d4978-4615-42ee-907a-4f7d0c4f09b5 = { name = "RadCalNet", path = "R/RadCalNet" }
