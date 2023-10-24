@@ -1,6 +1,0 @@
-name = "wallytutor-registry"
-uuid = "5b958459-d796-4194-9b1d-901684f1be4c"
-repo = "https://github.com/wallytutor/wallytutor-registry"
-description = "WallyTutor packages"
-
-[packages]

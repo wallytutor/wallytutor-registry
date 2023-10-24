@@ -3,18 +3,27 @@ using Pkg
 Pkg.add("LocalRegistry")
 
 using LocalRegistry
+using YAML
 
-const repo = "D:/"
+data = YAML.load_file("conf.yaml")
+packages = map(p->joinpath(data["reposroot"], p), data["packages"])
+
+@assert all(isdir.(packages))
+
 const name = "wallytutor-registry"
-const rurl = "https://github.com/wallytutor/wallytutor-registry"
+const repo = "https://github.com/wallytutor/wallytutor-registry"
 
-if !isfile("Registry.toml")
-    create_registry(name, rurl, description = "WallyTutor packages")
+try
+    create_registry(
+        name, repo;
+        description = "WallyTutor packages",
+        push        = true
+    )
+catch
 end
 
-packages = [
-    "$(repo)/DryTooling.jl",
-    "$(repo)/RadCalNet.jl"
-]
+registry = joinpath(homedir(), ".julia", "registries", name)
+
+run(Cmd(`git pull`), dir = registry)
 
 register.(packages; registry = name)
