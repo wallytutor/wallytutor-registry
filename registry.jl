@@ -18,7 +18,7 @@ function createifnone(
     if isdir(registry)
         @info "Found a registry at $(registry)"
     else
-        create_registry(name, repo; push = false, branch = "main")
+        create_registry(name, repo; push = true, branch = "main")
         run(Cmd(`git pull $repo main`, dir = registry))
         run(Cmd(`git push --set-upstream origin/main main`, dir = registry))
     end
