@@ -57,6 +57,8 @@ function workflow(
     createifnone(name, repo; path, branch)
 
     saferegister.(packages; registry = name)
+
+    @info "Finished workflow"
 end
 
 workflow(
