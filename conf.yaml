@@ -1,4 +1,5 @@
-reposroot: 'D:/'
+root: 'D:/'
+
 packages:
   - DryTooling.jl
   - RadCalNet.jl
