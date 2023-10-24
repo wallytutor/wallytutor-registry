@@ -18,7 +18,7 @@ function createifnone(
     if isdir(registry)
         @info "Found a registry at $(registry)"
     else
-        create_registry(name, repo)
+        create_registry(name, repo; branch = "main")
     end
 
     return nothing
