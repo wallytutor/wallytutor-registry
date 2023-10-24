@@ -11,16 +11,15 @@ using YAML
 function createifnone(
         name::String,
         repo::String;
-        path::String
+        path::String,
+        branch::String
     )::Nothing
     registry = joinpath(path, name)
 
     if isdir(registry)
         @info "Found a registry at $(registry)"
     else
-        create_registry(name, repo; push = true, branch = "home")
-        # run(Cmd(`git pull $repo main`, dir = registry))
-        # run(Cmd(`git push --set-upstream origin/main main`, dir = registry))
+        create_registry(name, repo; branch)
     end
 
     return nothing
@@ -43,7 +42,8 @@ end
 "Manages workflow of registry creation and packages registering."
 function workflow(
         name::String,
-        repo::String; 
+        repo::String;
+        branch::String = "test",
         conf::String = "conf.yaml",
         path::String = joinpath(homedir(), ".julia", "registries")
     )
@@ -53,7 +53,7 @@ function workflow(
 
     @assert all(isdir.(packages))
 
-    createifnone(name, repo; path)
+    createifnone(name, repo; path, branch)
 
     saferegister.(packages; registry = name)
 end
