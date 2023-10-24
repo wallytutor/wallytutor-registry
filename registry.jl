@@ -48,9 +48,7 @@ function workflow(
         conf::String = "conf.yaml",
         path::String = joinpath(homedir(), ".julia", "registries")
     )
-    data = YAML.load_file(conf)
-
-    packages = map(p->joinpath(data["root"], p), data["packages"])
+    packages = YAML.load_file(conf)["packages"]
 
     @assert all(isdir.(packages))
 

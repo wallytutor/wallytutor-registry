@@ -1,5 +1,3 @@
-root: 'D:/'
-
 packages:
-  - DryTooling.jl
-  - RadCalNet.jl
+  - D:/DryTooling.jl
+  - D:/RadCalNet.jl
