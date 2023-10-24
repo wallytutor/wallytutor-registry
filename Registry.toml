@@ -1,0 +1,5 @@
+name = "wallytutor-registry"
+uuid = "a427d7b3-1a63-4f83-80e3-50e8b391775f"
+repo = "https://github.com/wallytutor/wallytutor-registry"
+
+[packages]
