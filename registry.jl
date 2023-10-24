@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 using Pkg
 Pkg.add("LocalRegistry")
+Pkg.add("YAML")
 
 using LibGit2
 using LocalRegistry
 using YAML
-
 
 "Create a new registry if it does not exist yet."
 function createifnone(
@@ -53,7 +53,7 @@ function workflow(
 
     createifnone(name, repo; path)
 
-    saferegister.(packages; registry = NAME)
+    saferegister.(packages; registry = name)
 end
 
 workflow(
