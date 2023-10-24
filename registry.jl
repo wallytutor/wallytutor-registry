@@ -5,6 +5,7 @@ Pkg.add("YAML")
 
 using LibGit2
 using LocalRegistry
+using Random
 using YAML
 
 "Create a new registry if it does not exist yet."
@@ -60,5 +61,6 @@ end
 
 workflow(
     "wallytutor-registry",
-    "https://github.com/wallytutor/wallytutor-registry"
+    "https://github.com/wallytutor/wallytutor-registry";
+    branch = randstring(['0':'9'; 'a':'f'])
 )
