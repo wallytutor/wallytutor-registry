@@ -4,7 +4,7 @@ Pkg.add("LocalRegistry")
 
 using LocalRegistry
 
-const repo = "D:/Repositories"
+const repo = "D:/"
 const name = "wallytutor-registry"
 const rurl = "https://github.com/wallytutor/wallytutor-registry"
 
