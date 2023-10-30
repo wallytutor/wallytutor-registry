@@ -3,3 +3,4 @@ uuid = "1c8d5cd5-4f2f-4bf2-a100-d894ff3ca1f1"
 repo = "https://github.com/wallytutor/wallytutor-registry"
 
 [packages]
+0dff88b2-42f1-4682-ada6-3beed8c0a17c = { name = "DryTooling", path = "D/DryTooling" }
