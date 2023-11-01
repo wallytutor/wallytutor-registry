@@ -28,7 +28,15 @@ end
 
 "Register a package if not dirty, otherwise a message is issued."
 function saferegister(p::String; registry::String)::Nothing
-    if LibGit2.isdirty(LibGit2.GitRepo(p))
+    repo = try
+        LibGit2.GitRepo(p)
+    catch
+        # Patch for repositories containing multiple packages in
+        # a tree containing <repo>/src/<pkg>/{Project.toml,src/}.
+        LibGit2.GitRepo(joinpath(p, "../.."))
+    end
+
+    if LibGit2.isdirty(repo)
         @warn "\
         Target $(p) is dirty!
         First review and commit changes manually then try again.
