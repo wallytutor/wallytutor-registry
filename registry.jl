@@ -52,7 +52,7 @@ end
 function workflow(
         name::String,
         repo::String;
-        branch::String = "test",
+        branch::String = "main",
         conf::String = "conf.yaml",
         path::String = joinpath(homedir(), ".julia", "registries")
     )
@@ -70,5 +70,5 @@ end
 workflow(
     "wallytutor-registry",
     "https://github.com/wallytutor/wallytutor-registry";
-    branch = randstring(['0':'9'; 'a':'f'])
+    # branch = randstring(['0':'9'; 'a':'f'])
 )
