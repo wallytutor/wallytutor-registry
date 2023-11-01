@@ -1,3 +1,5 @@
 packages:
   - D:/DryTooling.jl
   - D:/RadCalNet.jl
+  - D:/MultiPkgTutorial.jl/src/PkgCore
+  - D:/MultiPkgTutorial.jl/src/PkgOther
